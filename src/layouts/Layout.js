@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
 import { AppBar, Box, IconButton, Tabs, Tab, Toolbar, Typography } from "@mui/material";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import EmailIcon from "@mui/icons-material/Email";
@@ -6,7 +7,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import SteamIcon from "@mui/icons-material/SportsEsports";    // Replace this with actual icon
 
-const links = ['Home', 'About', 'Experience', 'Projects'];
 const medias = [
   {link: 'mailto:rjgreenan55@gmail.com', component: <EmailIcon sx={{ fontSize: '30px'}} />},
   {link: 'https://www.linkedin.com/in/robert-greenan/', component: <LinkedInIcon sx={{ fontSize: '30px'}} />},
@@ -14,11 +14,12 @@ const medias = [
   {link: 'https://steamcommunity.com/id/Boebi_G', component: <SteamIcon sx={{ fontSize: '30px'}} />}
 ];
 
-const Layout = (tValue, setTValue) => {
-  const [tabValue, setTabValue] = React.useState(links[0]);
+const Layout = ({ tabValue, setTabValue, routes }) => {
+  const navigate = useNavigate();
 
   const handleChange = (event, newTabValue) => {
     setTabValue(newTabValue);
+    navigate(newTabValue);
   };
 
   return (
@@ -27,9 +28,9 @@ const Layout = (tValue, setTValue) => {
       <AppBar>
           <Toolbar>
             {/* Title */}
-            <Box sx={{ display: 'flex', flexGrow: 1 }}>
+            <Box sx={{ mr: '15px', display: 'flex', flexGrow: 1 }}>
               <QuestionMarkIcon sx={{ mr: 2, fontSize: 30 }} />
-              <Typography variant='h5'> 
+              <Typography noWrap variant='h5'> 
                 Robert Greenan
               </Typography>
             </Box>
@@ -37,11 +38,11 @@ const Layout = (tValue, setTValue) => {
             {/* Links */}
             <Box sx={{ mr: '10%', display: 'flex' }}>
               <Tabs value={tabValue} textColor='secondary' indicatorColor='secondary' onChange={handleChange}>
-                {links.map((link, i) => (
+                {routes.map(route => (
                   <Tab
-                    key={link}
-                    label={link}
-                    value={link}
+                    key={route}
+                    label={route}
+                    value={route}
                     sx={{ m: '2px', color: '#FFFFFF' }}
                   />
                 ))}
