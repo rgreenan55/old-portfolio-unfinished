@@ -1,12 +1,11 @@
 import React from "react";
-import Layout from "./layouts/Layout.js"
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-import EmailIcon from "@mui/icons-material/Email";
+import MainLayout from "./layouts/MainLayout.js"
+import Home from "./pages/Home.js"
+import About from "./pages/About.js"
+import Experience from "./pages/Experience.js"
+import Projects from "./pages/Projects.js"
 
 const theme = createTheme({
   palette: {
@@ -20,13 +19,8 @@ const theme = createTheme({
   },
 })
 
-const Home = () => {<EmailIcon color='primary' />}
-const About = () => {<p> b </p>}
-const Experience = () => {<p> c </p>}
-const Projects = () => {<p> d </p>}
-
-const routes = ['Home', 'About', 'Experience', 'Projects'];
 const App = () => {
+  const routes = ['Home', 'About', 'Experience', 'Projects'];
   const [route, setRoute] = React.useState('Home')
 
   return (
@@ -35,9 +29,11 @@ const App = () => {
         {/* Header */}
         <Routes>
           {/* Could make this main thing? Then RouteA -> Portfolio, RouteB->App, then subroute? */}
-          <Route path="/" element={<Layout tabValue={route} setTabValue={setRoute} routes={routes} />}>
+          <Route path="/" element={<MainLayout tabValue={route} setTabValue={setRoute} routes={routes} />}>
             <Route path="Home" element={<Home />} />
             <Route path="About" element={<About />} />
+            <Route path="Experience" element={<Experience />} />
+            <Route path="Projects" element={<Projects />} />
           </Route>
 
           <Route path="*" element={<div> Website Path Does Not Exist </div>} />
