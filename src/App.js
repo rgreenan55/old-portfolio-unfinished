@@ -20,8 +20,7 @@ const theme = createTheme({
 })
 
 const App = () => {
-  const routes = ['Home', 'About', 'Experience', 'Projects'];
-  const [route, setRoute] = React.useState('Home')
+  const routes = ['Home', 'About', 'Experience', 'Projects']; // When Adding Route, put its Route here.
 
   return (
     <ThemeProvider theme={theme}>
@@ -29,7 +28,7 @@ const App = () => {
         {/* Header */}
         <Routes>
           {/* Could make this main thing? Then RouteA -> Portfolio, RouteB->App, then subroute? */}
-          <Route path="/" element={<MainLayout tabValue={route} setTabValue={setRoute} routes={routes} />}>
+          <Route path="/" element={<MainLayout routes={routes} />}>
             <Route path="Home" element={<Home />} />
             <Route path="About" element={<About />} />
             <Route path="Experience" element={<Experience />} />
