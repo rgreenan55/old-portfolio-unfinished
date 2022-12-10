@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate, useLocation, Outlet } from "react-router-dom"
-import { AppBar, Box, IconButton, Tabs, Tab, Toolbar, Typography } from "@mui/material";
-import MouseTrail from './MouseTrail.js';
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import { AppBar, Box, Icon, IconButton, Tabs, Tab, Toolbar, Typography, SvgIcon } from "@mui/material";
+import MouseTrail from "./MouseTrail.js";
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark"
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
