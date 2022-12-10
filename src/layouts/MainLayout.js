@@ -21,8 +21,15 @@ const MainLayout = ({ routes }) => {
 
 	const handleChange = (event, newTabValue) => {
 		setTabValue(newTabValue);
-		navigate(newTabValue);
+
+		if (event !== 'manual') {
+			navigate(newTabValue);
+		}
 	};
+
+	React.useEffect(() => {
+		handleChange('manual', location.pathname.substring(1));
+	}, [location]);
 
 	return (
 		<>
