@@ -1,8 +1,11 @@
 import React from "react";
+import AnimatedPage from "./AnimatedPage";
 
 const Skills = () => {
   return (
-    <> Skills </>
+    <AnimatedPage>
+      Skills
+    </AnimatedPage>
   )
 }
 

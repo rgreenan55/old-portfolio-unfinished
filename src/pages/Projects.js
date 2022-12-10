@@ -1,5 +1,6 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
+import AnimatedPage from "./AnimatedPage";
 import Carousel from "../components/Carousel";
 import slides from "../assets/proj1/images"
 
@@ -7,7 +8,7 @@ const Projects = () => {
   const [index, setIndex] = React.useState(0)
 
   return (
-    <>
+    <AnimatedPage>
       <Paper sx={{ p: '24px', pt: '12px', bgcolor: '#221533' }}>
         <Carousel index={index} setIndex={setIndex} slides={slides} />
       </Paper>
@@ -17,7 +18,7 @@ const Projects = () => {
             <Typography variant='body1' align='center'> {slides[index].description} </Typography>
         </Paper>
       </Paper>
-    </>
+    </AnimatedPage>
   )
 }
 

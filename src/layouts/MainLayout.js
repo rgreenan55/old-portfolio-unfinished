@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation, Outlet } from "react-router-dom"
 import { AppBar, Box, IconButton, Tabs, Tab, Toolbar, Typography } from "@mui/material";
+import MouseTrail from './MouseTrail.js';
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -17,22 +18,23 @@ const medias = [
 const MainLayout = ({ routes }) => {
 	const location = useLocation();
 	const navigate = useNavigate();
-	const [tabValue, setTabValue] = React.useState(location.pathname.substring(1))
+	const [tabValue, setTabValue] = React.useState(location.pathname.substring(1));
 
 	const handleChange = (event, newTabValue) => {
 		setTabValue(newTabValue);
 
-		if (event !== 'manual') {
+		if (event !== 'exterior') {
 			navigate(newTabValue);
 		}
 	};
 
 	React.useEffect(() => {
-		handleChange('manual', location.pathname.substring(1));
+		handleChange('exterior', location.pathname.substring(1));
 	}, [location]);
 
 	return (
-		<>
+		<React.Fragment>
+			<MouseTrail />
 			{/* Header */}
 			<AppBar position='sticky'>
 					<Toolbar>
@@ -74,10 +76,7 @@ const MainLayout = ({ routes }) => {
 						</Box>
 					</Toolbar>
 			</AppBar>
-			<Box minHeight='calc(100vh-64px)' margin='24px'>
-				<Outlet />
-			</Box>
-		</>
+		</React.Fragment>
 	)
 }
 

@@ -1,8 +1,11 @@
 import React from "react";
+import AnimatedPage from "./AnimatedPage";
 
 const Work = () => {
   return (
-    <> Work </>
+    <AnimatedPage>
+      Work
+    </AnimatedPage>
   )
 }
 

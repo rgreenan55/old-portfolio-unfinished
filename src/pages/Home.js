@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
-import CanvasTrail from "../components/CanvasTrail";
-import HomepagePhoto from "../assets/temp_homepage_photo.png"
 import { useNavigate } from "react-router-dom";
+import { Box, Button, Grid, Typography } from "@mui/material";
+import HomepagePhoto from "../assets/temp_homepage_photo.png"
+import AnimatedPage from "./AnimatedPage";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,8 +12,7 @@ const Home = () => {
   }
 
   return (
-    <>
-      <CanvasTrail />
+    <AnimatedPage>
       <Grid container spacing={2} justifyContent='center' alignItems='center'>
         <Grid item xs={6} >
           <Box sx={{ ml: '10%' }}>
@@ -35,7 +34,7 @@ const Home = () => {
             />
         </Grid>
       </Grid>
-    </>
+    </AnimatedPage>
   )
 }
 
