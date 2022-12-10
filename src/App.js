@@ -4,7 +4,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import MainLayout from "./layouts/MainLayout.js"
 import Home from "./pages/Home.js"
 import About from "./pages/About.js"
-import Experience from "./pages/Experience.js"
+import Skills from "./pages/Skills.js"
+import Work from "./pages/Work.js"
 import Projects from "./pages/Projects.js"
 
 const theme = createTheme({
@@ -20,7 +21,7 @@ const theme = createTheme({
 })
 
 const App = () => {
-  const routes = ['Home', 'About', 'Experience', 'Projects']; // When Adding Route, put its Route here.
+  const routes = ['Home', 'About', 'Skills', 'Work', 'Projects']; // When Adding Route, put its Route here.
 
   return (
     <ThemeProvider theme={theme}>
@@ -29,7 +30,8 @@ const App = () => {
           <Route path="/" element={<MainLayout routes={routes} />}>
             <Route path="Home" element={<Home />} />
             <Route path="About" element={<About />} />
-            <Route path="Experience" element={<Experience />} />
+            <Route path="Skills" element={<Skills />} />
+            <Route path="Work" element={<Work />} />
             <Route path="Projects" element={<Projects />} />
           </Route>
 
