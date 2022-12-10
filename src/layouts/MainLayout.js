@@ -67,7 +67,7 @@ const MainLayout = ({ routes }) => {
 						</Box>
 					</Toolbar>
 			</AppBar>
-			<Box margin='24px'>
+			<Box minHeight='calc(100vh-64px)' margin='24px'>
 				<Outlet />
 			</Box>
 		</>

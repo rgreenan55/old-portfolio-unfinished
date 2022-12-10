@@ -25,9 +25,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        {/* Header */}
         <Routes>
-          {/* Could make this main thing? Then RouteA -> Portfolio, RouteB->App, then subroute? */}
           <Route path="/" element={<MainLayout routes={routes} />}>
             <Route path="Home" element={<Home />} />
             <Route path="About" element={<About />} />

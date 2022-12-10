@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, MobileStepper, Paper } from "@mui/material";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
+import PropTypes from "prop-types";
 
 const CurrentImage = ({ src }) => {
   return (
@@ -76,6 +77,12 @@ const Carousel = ({ slides, index, setIndex }) => {
       </Box>
     </Box>
   )
+}
+
+Carousel.propTypes = {
+  slides: PropTypes.array.isRequired,
+  index: PropTypes.number.isRequired,
+  setIndex: PropTypes.func.isRequired,
 }
 
 export default Carousel;
