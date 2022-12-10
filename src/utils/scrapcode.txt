@@ -1,0 +1,45 @@
+/*
+Old Canvas Code before I used OGL, could use this in something else in the future?
+Something like a SkribbleIO copy??
+
+const canvas = React.useRef()
+const [mouse, setMouse] = React.useState({})
+
+React.useEffect(() => {
+  const handleMouseMove = (event) => {
+    setMouse({ x: event.clientX, y: event.clientY });
+  };
+
+  window.addEventListener('mousemove', handleMouseMove);
+
+  return () => {
+    window.removeEventListener('mousemove', handleMouseMove);
+  }
+}, [])
+
+React.useEffect(() => {
+  const context = canvas.current.getContext('2d');
+  
+  context.fillStyle = '#FF0000';
+  context.beginPath();
+  context.arc(mouse.x, mouse.y, 100, 0, 3.14*2)
+
+  context.fill();
+  
+
+}, [mouse]);
+
+<canvas 
+  ref={canvas}
+  height={window.innerHeight}
+  width={window.innerWidth}
+  style={{
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    zIndex: -1,
+    height: '100vh',
+    width: '100vw',
+  }}
+/>
+*/
