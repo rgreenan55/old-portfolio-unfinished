@@ -36,7 +36,7 @@ const MainLayout = ({ routes }) => {
 		<React.Fragment>
 			<MouseTrail />
 			{/* Header */}
-			<AppBar position='sticky'>
+			<AppBar>
 					<Toolbar>
 						{/* Title */}
 						<Box sx={{ mr: '15px', display: 'flex', flexGrow: 1 }}>
@@ -76,6 +76,7 @@ const MainLayout = ({ routes }) => {
 						</Box>
 					</Toolbar>
 			</AppBar>
+			<Toolbar />
 		</React.Fragment>
 	)
 }

@@ -4,18 +4,19 @@ import React from "react";
 import { Color, Polyline, Renderer, Transform, Vec3 } from 'ogl';
 import { vertex } from '../utils/canvas_trail_util.js';
 
+// adding two canvas for some reason.
 const CanvasTrail = () => {
   const canvasDiv = React.useRef(null)
   const canvas = React.useRef(null)
 
   React.useEffect(() => {
-    if (canvas) {
+    if (document.getElementById('canvas-div').children.length < 1) { // Required to prevent two canvas being added.
       // ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
       //  Canvas Setup
       // ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
       const renderer = new Renderer({ dpr: 2 });
       const gl = renderer.gl
-    
+      
       gl.canvas.id = 'canvas';
       gl.canvas.ref = canvas;
       gl.canvas.style.position = 'absolute';
@@ -118,10 +119,9 @@ const CanvasTrail = () => {
           renderer.render({ scene });
         });
       }
-      requestAnimationFrame(update)
-
+      requestAnimationFrame(update);
     }
-  }, []);
+  });
 
   return (
     <div
