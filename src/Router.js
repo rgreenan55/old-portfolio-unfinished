@@ -12,7 +12,7 @@ import Projects from "./pages/Projects.js"
 const MyRouter = () => {
   const location = useLocation();
   const locationArr = location.pathname?.split('/') || [];
-  const routes = ['Home', 'About', 'Skills', 'Work', 'Projects']; // When Adding Route, put its Route here.
+  const routes = ['Home', 'About', 'Skills', 'Projects', 'Work']; // When Adding Route, put its Route here.
 
   return (
     <>
@@ -22,8 +22,8 @@ const MyRouter = () => {
           <Route path='Home' element={<Home />} />
           <Route path='About' element={<About />} />
           <Route path='Skills' element={<Skills />} />
-          <Route path='Work' element={<Work />} />
           <Route path='Projects' element={<Projects />} />
+          <Route path='Work' element={<Work />} />
           <Route path='*' element={<div> Website Path Does Not Exist </div>} />
         </Routes>
       </AnimatePresence>

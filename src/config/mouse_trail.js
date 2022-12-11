@@ -34,3 +34,7 @@ vec4 getPosition() {
 void main() {
     gl_Position = getPosition();
 }`
+
+export {
+ vertex
+};

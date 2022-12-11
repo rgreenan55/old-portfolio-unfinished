@@ -1,46 +1,25 @@
-const sections = [
-  {
-    label: 'Overall',
-    skills: [
-      { skill: '', tier: 1 },
-      { skill: '', tier: 0 },
-      { skill: '', tier: 2 },
-    ]
-  },
-  {
-    label: 'Languages',
-    skills: [
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-    ]
-  },
-  {
-    label: 'Tools',
-    skills: [
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-    ]
-  },
-  {
-    label: 'Soft Skills',
-    skills: [
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-    ] 
-  },
-  {
-    label: 'Miscellaneous',
-    skills: [
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-      { skill: '', tier: 0 },
-    ]
-  },
+const technicalSkills = [
+  { label: 'ReactJS', percent: 80 },
+  { label: 'Python', percent: 55 },
+  { label: 'Java', percent: 40 },
 ];
 
+const transferableSkills = [
+  { label: 'Problem Solving', percent: 90 },
+  { label: 'Communication', percent: 60 },
+  { label: 'Organization', percent: 80 },
+];
+
+const softwareFields = [
+  { label: 'Font End', percent: 90 },
+  { label: 'Back End', percent: 70 },
+  { label: 'Testing', percent: 60 },
+  { label: 'Database', percent: 40 },
+  { label: 'Cloud', percent: 30 },
+]; // ??
+
 export {
-  sections
+  technicalSkills,
+  transferableSkills,
+  softwareFields,
 };
