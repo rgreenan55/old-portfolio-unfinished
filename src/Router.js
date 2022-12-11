@@ -19,13 +19,12 @@ const MyRouter = () => {
       <MainLayout routes={routes} />
       <AnimatePresence initial={false} mode="wait">
         <Routes location={location} key={locationArr}>
-          {/*<Route path="/" element={<MainLayout routes={routes} />}>*/}
-          <Route path="Home" element={<Home />} />
-          <Route path="About" element={<About />} />
-          <Route path="Skills" element={<Skills />} />
-          <Route path="Work" element={<Work />} />
-          <Route path="Projects" element={<Projects />} />
-          <Route path="*" element={<div> Website Path Does Not Exist </div>} />
+          <Route path='Home' element={<Home />} />
+          <Route path='About' element={<About />} />
+          <Route path='Skills' element={<Skills />} />
+          <Route path='Work' element={<Work />} />
+          <Route path='Projects' element={<Projects />} />
+          <Route path='*' element={<div> Website Path Does Not Exist </div>} />
         </Routes>
       </AnimatePresence>
     </>

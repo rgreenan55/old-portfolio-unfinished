@@ -34,14 +34,3 @@ vec4 getPosition() {
 void main() {
     gl_Position = getPosition();
 }`
-
-// I dont use, but given with example code.
-const random = (a, b) => {
-  const seed = Math.random();
-  return a * (1.0 - seed) + b * seed;
-}
-
-export {
-  vertex,
-  random
-}

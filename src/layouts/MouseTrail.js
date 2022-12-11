@@ -2,7 +2,8 @@
 // https://tympanus.net/codrops/2019/09/24/crafting-stylised-mouse-trails-with-ogl/
 import React from "react";
 import { Color, Polyline, Renderer, Transform, Vec3 } from 'ogl';
-import { vertex } from '../utils/canvas_trail_util.js';
+import { vertex } from '../config/mouse_trail.js';
+import { colors } from '../utils/util.js'
 
 // adding two canvas for some reason.
 const CanvasTrail = () => {
@@ -31,7 +32,7 @@ const CanvasTrail = () => {
       // ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
       //  Lines Setup
       // ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
-      const lines = ['#311847', '#a01a7d', '#ec4067', '#ef5d60', '#e09f7d'].map((color, i) => {
+      const lines = colors.map((color, i) => {
         const line = {
           points: [],
           spring: (0.07-((i+1)*.005)),
