@@ -5,7 +5,8 @@ import MyRouter from "./Router";
 
 const theme = createTheme({
   palette: {
-    type: 'dark',
+    type: 'light',
+    mode: 'light',
     primary: {
       main: '#221533',
     },

@@ -1,5 +1,5 @@
 const technicalSkills = [
-  { label: 'ReactJS', percent: 80 },
+  { label: 'Javascript', percent: 80 },
   { label: 'Python', percent: 55 },
   { label: 'Java', percent: 40 },
 ];
@@ -15,8 +15,9 @@ const softwareFields = [
   { label: 'Back End', percent: 70 },
   { label: 'Testing', percent: 60 },
   { label: 'Database', percent: 40 },
-  { label: 'Cloud', percent: 30 },
-]; // ??
+  { label: '???', percent: 30 },
+];
+
 
 export {
   technicalSkills,

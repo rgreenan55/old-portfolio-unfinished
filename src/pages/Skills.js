@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { Box, Button, CircularProgress, Grid, LinearProgress, Paper, Stack, Typography } from "@mui/material";
-import { technicalSkills, transferableSkills, softwareFields } from '../config/skills.js';
+import { Box, Button, CircularProgress, Divider, Grid, LinearProgress, Paper, Stack, Typography } from "@mui/material";
+import { technicalSkills, transferableSkills, softwareFields, softwareTools } from '../config/skills.js';
 import AnimatedPage from "./AnimatedPage";
+import { useTheme } from '@emotion/react';
+import { QuestionMark } from '@mui/icons-material';
 
 const MyProgress = ({ label, value, ...props }) => {
   return (
@@ -34,25 +36,24 @@ const MyCircularProgress = ({ label, value, ...props }) => {
 const Skills = () => {
   const navigate = useNavigate();
 
+  console.log(useTheme());
+
   const onClick = () => {
     navigate('/Projects')
-  }	
+  }
 
   return (
     <AnimatedPage>
       {/* Left */}
       <Grid container spacing={4} justifyContent='center' alignItems='center'>
-        <Grid item xs={4}>
-          <Box sx={{ ml: '24px' }}>
+        <Grid item xs={12} lg={4}>
+          <Box sx={{ pl: '48px' }}>
             <Typography variant='h4'> My Skills </Typography>
-            <Button variant='contained' size='large' onClick={onClick}>
-              My Projects
-            </Button>
           </Box>
         </Grid>
         
         {/* Right */}
-        <Grid item xs={8}>
+        <Grid item xs={12} lg={8} >
           {/* Top */}
           <Paper sx={{ mb: '24px', height: '400px', opacity: '95%' }}>
             <Box sx={{ p: '8px 24px 0px' }}>
@@ -66,8 +67,8 @@ const Skills = () => {
                   {transferableSkills.map(skill => <MyProgress key={skill.label} label={skill.label} value={skill.percent} />)}
                 </Grid>
                 <Grid item xs={12}>
-                  <Paper sx={{ p: '12px 0px 12px', bgcolor: '#221533' }}>
-                    <Stack direction='row'>
+                  <Paper color='secondary' sx={{ p: '12px 0px 12px', bgcolor: '#221533' }}>
+                    <Stack direction='row' divider={<Divider varient='middle' orientation='vertical' flexItem sx={{ backgroundColor: 'black' }} />} spacing={2}>
                       {softwareFields.map(field => <MyCircularProgress key={field.label} label={field.label} value={field.percent}/>)}
                     </Stack>
                   </Paper>
@@ -77,7 +78,17 @@ const Skills = () => {
           </Paper>
           {/* Bottom */}
           <Paper sx={{ height: '400px', opacity: '95%' }}>
+            <Box sx={{ p: '8px 24px 0px' }}>
+              <Typography variant='h5' noWrap sx={{ textDecoration: 'underline' }}> Software & Tools </Typography>
+              <Box sx={{ height: '300px' }}>
 
+              </Box>
+              <Box display='flex' justifyContent='flex-end' alignContent='flex-end'>
+                <Button position='absolute' variant='contained' size='large' onClick={onClick} sx={{ width: '100%' }}>
+                  View Projects
+                </Button>
+              </Box>
+            </Box>
           </Paper>
         </Grid>
       </Grid>
