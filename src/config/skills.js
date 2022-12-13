@@ -15,7 +15,7 @@ const softwareFields = [
   { label: 'Back End', percent: 70 },
   { label: 'Testing', percent: 60 },
   { label: 'Database', percent: 40 },
-  { label: '???', percent: 30 },
+  { label: 'Cloud', percent: 30 },
 ];
 
 

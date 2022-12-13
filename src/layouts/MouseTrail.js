@@ -25,6 +25,7 @@ const CanvasTrail = () => {
       gl.canvas.style.left = 0;
       gl.canvas.style.zIndex = -1;
 
+      canvasDiv.current.innerHTML = ''
       canvasDiv.current.appendChild(gl.canvas);
       gl.clearColor(0.9, 0.9, 0.9, 1);
       const scene = new Transform();
