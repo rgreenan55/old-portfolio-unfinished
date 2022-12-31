@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion"
 import MainLayout from "./layouts/MainLayout.js"
 import Home from "./pages/Home.js"
@@ -12,18 +12,26 @@ import Projects from "./pages/Projects.js"
 const MyRouter = () => {
   const location = useLocation();
   const locationArr = location.pathname?.split('/') || [];
-  const routes = ['Home', 'About', 'Skills', 'Projects', 'Work']; // When Adding Route, put its Route here.
+  const navigate = useNavigate();
+  const routes = ['home', 'about', 'skills', 'projects', 'work'];
+
+  React.useEffect(() => {
+    if (location.pathname === '/') {
+      navigate('/home');
+    }
+  }, [location])
+  
 
   return (
     <>
       <MainLayout routes={routes} />
       <AnimatePresence initial={false} mode="wait">
         <Routes location={location} key={locationArr}>
-          <Route path='Home' element={<Home />} />
-          <Route path='About' element={<About />} />
-          <Route path='Skills' element={<Skills />} />
-          <Route path='Projects' element={<Projects />} />
-          <Route path='Work' element={<Work />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='skills' element={<Skills />} />
+          <Route path='projects' element={<Projects />} />
+          <Route path='work' element={<Work />} />
           <Route path='*' element={<div> Website Path Does Not Exist </div>} />
         </Routes>
       </AnimatePresence>

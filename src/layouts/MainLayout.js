@@ -18,16 +18,19 @@ const medias = [
 const MainLayout = ({ routes }) => {
 	const location = useLocation();
 	const navigate = useNavigate();
-	const [tabValue, setTabValue] = React.useState(location.pathname.substring(1));
+	const [tabValue, setTabValue] = React.useState(location.pathname.substring(1) || 'home');
 
 	const handleChange = (event, newTabValue) => {
-		setTabValue(newTabValue);
+		const newTabValueChecked = newTabValue === '' ? 'home' : newTabValue;
+		setTabValue(newTabValueChecked);
 
 		if (event !== 'exterior') {
-			navigate(newTabValue);
+			navigate(newTabValueChecked);
 		}
 	};
 
+	// If URL changes from external update tabs
+	// external ex. typing in address bar
 	React.useEffect(() => {
 		handleChange('exterior', location.pathname.substring(1));
 	}, [location]);
@@ -52,7 +55,7 @@ const MainLayout = ({ routes }) => {
 								{routes.map(route => (
 									<Tab
 										key={route}
-										label={route}
+										label={route.charAt(0).toUpperCase() + route.slice(1)}
 										value={route}
 										sx={{ m: '2px', color: '#FFFFFF' }}
 									/>
