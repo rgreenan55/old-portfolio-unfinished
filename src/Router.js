@@ -20,7 +20,6 @@ const MyRouter = () => {
       navigate('/home');
     }
   }, [location])
-  
 
   return (
     <>
